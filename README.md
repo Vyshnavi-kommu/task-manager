@@ -4,11 +4,6 @@
 
 ### 🚀 [**Live Demo → task-manager-mauve-xi.vercel.app**](https://task-manager-mauve-xi.vercel.app)
 
-![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=white)
-![Node.js](https://img.shields.io/badge/Node.js-Express-339933?logo=node.js&logoColor=white)
-![MongoDB](https://img.shields.io/badge/MongoDB-Atlas-47A248?logo=mongodb&logoColor=white)
-![Deployed on Vercel](https://img.shields.io/badge/Deployed-Vercel-000000?logo=vercel&logoColor=white)
-
 </div>
 
 ---
