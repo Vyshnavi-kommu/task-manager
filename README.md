@@ -1,83 +1,74 @@
-# TaskManager - Full Stack Task Manager Web App
+# 🗂️ TaskManager — Full Stack Productivity App
 
-A modern, responsive, and feature-rich Task Manager application built with the MERN stack (MongoDB, Express, React, Node.js).
+<div align="center">
 
-## 🚀 Features
+### 🚀 [**Live Demo → task-manager-mauve-xi.vercel.app**](https://task-manager-mauve-xi.vercel.app)
 
--   **Secure Authentication**: JWT-based login and registration.
--   **Task CRUD**: Create, read, update, and delete tasks with ease.
--   **Advanced Filtering**: Filter by status and priority, and search by title.
--   **Optimized Queries**: MongoDB indexing for better performance.
--   **Analytics Dashboard**: Visual insights into productivity using Recharts.
--   **Dark Mode**: Sleek dark interface with persistence.
--   **Responsive Design**: Fully functional on mobile and desktop.
--   **Global Error Handling**: Robust backend error management.
+![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=white)
+![Node.js](https://img.shields.io/badge/Node.js-Express-339933?logo=node.js&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB-Atlas-47A248?logo=mongodb&logoColor=white)
+![Deployed on Vercel](https://img.shields.io/badge/Deployed-Vercel-000000?logo=vercel&logoColor=white)
+
+</div>
+
+---
+
+A modern, full-stack Task Manager built with the **MERN stack** — featuring a professional UI, real-time analytics, dark mode, and downloadable reports.
+
+## ✨ Features
+
+- 🔐 **Secure Auth** — JWT-based login & registration
+- ✅ **Task CRUD** — Create, update, delete, and filter tasks
+- 📊 **Analytics Dashboard** — Visual charts (bar + donut) via Recharts
+- 📥 **Download Reports** — Export analytics as CSV or formatted text
+- 🌙 **Dark Mode** — Full dark/light theme toggle
+- 📱 **Responsive** — Works on mobile and desktop
+- ⚡ **Real-time Filtering** — Filter by status, priority, and search by title
 
 ## 🛠️ Tech Stack
 
--   **Frontend**: React (Vite), Tailwind CSS, Lucide React, Recharts, React Hot Toast.
--   **Backend**: Node.js, Express, MongoDB (Mongoose), JWT, Bcryptjs.
+| Layer | Technology |
+|-------|-----------|
+| Frontend | React 19 + Vite + Tailwind CSS v4 |
+| Backend | Node.js + Express |
+| Database | MongoDB Atlas (Mongoose) |
+| Auth | JWT + Bcryptjs |
+| Charts | Recharts |
+| Deployment | Vercel (frontend) + Render (backend) |
 
-## ⚙️ Setup Instructions
+## ⚙️ Local Setup
 
-### Prerequisites
+### Backend
+```bash
+cd backend
+npm install
+# Create .env with MONGO_URI, JWT_SECRET, PORT=5001
+npm start
+```
 
--   Node.js (v16+)
--   MongoDB (Running locally or an Atlas URI)
-
-### Backend Setup
-
-1.  Navigate to the `backend` folder:
-    ```bash
-    cd backend
-    ```
-2.  Install dependencies:
-    ```bash
-    npm install
-    ```
-3.  Configure environment variables in `.env`:
-    ```env
-    MONGO_URI=your_mongodb_uri
-    JWT_SECRET=your_jwt_secret
-    PORT=5000
-    ```
-4.  Start the server:
-    ```bash
-    npm start
-    ```
-
-### Frontend Setup
-
-1.  Navigate to the `frontend` folder:
-    ```bash
-    cd frontend
-    ```
-2.  Install dependencies:
-    ```bash
-    npm install
-    ```
-3.  Start the development server:
-    ```bash
-    npm run dev
-    ```
+### Frontend
+```bash
+cd frontend
+npm install
+# Create .env.local with VITE_API_URL=http://localhost:5001/api
+npm run dev
+```
 
 ## 📡 API Endpoints
 
 | Method | Path | Auth | Description |
-| :--- | :--- | :--- | :--- |
-| POST | `/api/auth/register` | No | Register a new user |
-| POST | `/api/auth/login` | No | Login and receive JWT |
-| GET | `/api/tasks` | Yes | Get tasks (filtered/paginated) |
-| POST | `/api/tasks` | Yes | Create a new task |
-| GET | `/api/tasks/:id` | Yes | Get a single task |
-| PUT | `/api/tasks/:id` | Yes | Update a task |
-| DELETE | `/api/tasks/:id` | Yes | Delete a task |
-| GET | `/api/tasks/analytics` | Yes | Get task statistics |
+|--------|------|------|-------------|
+| POST | `/api/auth/register` | No | Register user |
+| POST | `/api/auth/login` | No | Login & get JWT |
+| GET | `/api/tasks` | ✅ | List tasks (filter/paginate) |
+| POST | `/api/tasks` | ✅ | Create task |
+| PUT | `/api/tasks/:id` | ✅ | Update task |
+| DELETE | `/api/tasks/:id` | ✅ | Delete task |
+| GET | `/api/tasks/analytics` | ✅ | Get stats |
 
-## 🧠 Design Decisions
+## 🎨 Design Highlights
 
--   **JWT Auth Strategy**: Stateless authentication using secure tokens stored in `localStorage` and attached via Axios interceptors.
--   **Per-User Scoping**: Every task record is linked to a `User` ObjectId, ensuring data privacy and security.
--   **MongoDB Indexing**: Indexes on `{ user, status }` and `{ user, priority }` optimize common query patterns.
--   **Aggregation Pipeline**: Used MongoDB's `$facet` and `$group` for efficient single-query analytics calculation.
--   **Glassmorphism & Modern UI**: Used Tailwind CSS's backdrop-blur and vibrant gradients for a premium "WOW" factor.
+- Indigo-based design system with consistent light/dark surfaces
+- Glassmorphism cards with hover micro-animations
+- Inter font, rounded-3xl cards, and gradient banners
+- Professional analytics export (CSV + formatted .txt)
