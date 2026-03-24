@@ -1,0 +1,8 @@
+# Root
+node_modules/
+.env
+.env.local
+.DS_Store
+reset_user.js
+check_tasks.js
+seed.js

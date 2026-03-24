@@ -1,0 +1,7 @@
+node_modules/
+.env
+.DS_Store
+seed.js
+seed_wow.js
+final_check.js
+check_tasks.js
